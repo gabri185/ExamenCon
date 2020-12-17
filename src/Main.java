@@ -4,27 +4,27 @@ public class Main {
 
 
     public static void main(String[] args) {
-        if (metodo1("pepe@danielcastelao.org")) {
+        if (conectar("pepe@danielcastelao.org")) {
             System.out.println("Listo");
         } else {
             System.out.println("Fallo");
         }
-        if (metodo2()) {
+        if (conectar2()) {
             System.out.println("Listo");
         } else {
             System.out.println("Fallo");
         }
     }
 
-    public static boolean metodo1(String comando) {
-        Auxiliar Direccion = new Auxiliar(comando);
-        System.out.println("Conectando a " + Direccion.ip + ", con el usuario " + comando);
-        return Direccion.con();
+    public static boolean conectar(String comando) {
+        comparar compr = comparar.getInstance();
+        System.out.println("Conectando a " + compr.ip + ", con el usuario " + comando);
+        return compr.diferenciar();
     }
 
     public static boolean metodo2() {
-        Auxiliar persona2 = new Auxiliar();
-        System.out.println("Conectando a " + persona2.ip + ", con el usuario " + persona2.correo);
-        return persona2.con();
+        comparar compr2 = comparar.getInstance();
+        System.out.println("Conectando a " + compr2.ip + ", con el usuario " + compr2.correo);
+        return compr2.diferenciar();
     }
 }
